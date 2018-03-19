@@ -1,0 +1,30 @@
+Eisen aan het spel
+
+DOEL:
+in zo minmogelijk bewegingen alle dozen op de eindvelden 
+(1 beweging is een stap van de speler, het verschuiven van een doos telt als 1 beweging)
+minimaal 3 doolhoven die uitkomen
+
+code eisen:
+doolhof
+speler moet duwen
+doos schuiven
+dozen moeten op bepaalde doelen
+dozen niet getrokken
+1 doos tegelijk
+het speelveld vierkant
+muurelementen en velden
+evenveel eindvelden als dozen
+alleen hrizontaal en verticaal duwen
+doos op eindveld verandert van vorm
+doos kan niet door muren
+speler bewegen met pijltjestoetsen
+Het is mogelijk om halverwege een spel, het hetzelfde doolhof opnieuw te starten.
+
+
+
+GUI eisen :
+van boven
+aantal bewegingen naast het speelveld
+Het is mogelijk om halverwege een spel, het hetzelfde doolhof opnieuw te starten.
+
