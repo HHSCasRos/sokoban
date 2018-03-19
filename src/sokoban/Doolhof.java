@@ -10,11 +10,11 @@ package sokoban;
  *
  * @author Cas_Ros
  */
-public class Level {
+public class Doolhof {
     private Player player;
     private Tile[][] level;
     
-    public Level(Player player) {
+    public Doolhof(Player player) {
         this.player = player;
     }
 
