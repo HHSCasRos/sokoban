@@ -9,15 +9,16 @@ package sokoban;
  *
  * @author tgrja
  */
-public class Tile {
-    private Coordinaat coordinaat;
-    private boolean navigateable;
+public class EindVeld extends Veld{
     
-    public Coordinaat getCoordinaat(){
-        return this.coordinaat;
+    
+    public void changeDoos(){
+        
     }
     
-    public void setCoordinaat(Coordinaat c){
-        this.coordinaat = c;
+    public void msg(){
+        if(hasDoos()){
+            System.out.println("Box on endfield " + this.getCoordinaat().toString());
+        }
     }
 }

@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package sokoban;
 
 /**
  *
- * @author Cas_Ros
+ * @author tgrja
  */
-public class Box {
+public class Muur extends Tile{
     
 }

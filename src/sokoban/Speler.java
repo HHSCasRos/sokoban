@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package sokoban;
 
 /**
  *
- * @author Cas_Ros
+ * @author tgrja
  */
-public class Player {
+public class Speler {
     
-    public boolean move(){
-        return false;
+    public void lopen(){
+        
     }
     
-    public boolean pushBox(){
-        return false;
+    public void duwen(){
+        
     }
 }
