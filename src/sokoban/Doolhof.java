@@ -10,7 +10,11 @@ package sokoban;
  * @author tgrja
  */
 public class Doolhof {
-       
+    
+    public Tile getTile(Coordinaat crd){
+        return null;
+    }
+    
     public boolean completed(Veld[] eindVelden){
         int completedDozen = 0;
         
