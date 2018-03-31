@@ -9,9 +9,19 @@ package sokoban;
  *
  * @author tgrja
  */
-public class Speler {
+public class Speler extends MoveAble{
     
-    public void lopen(String richting){
+    public Speler(){
+        //zet speler op eerst mogelijke veld van doolhof.
+        //this.coordinaat = ...
+    }
+    
+    public Speler(Coordinaat c){
+        this.coordinaat = c;
+    }
+    
+    @Override
+    public void beweeg(String richting){
         if(/*neighbourVeld = Muur */false){
             return;
         }else if(/*neighbourVeld = Veld met doos */ false){
