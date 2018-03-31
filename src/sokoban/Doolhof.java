@@ -11,7 +11,7 @@ package sokoban;
  */
 public class Doolhof {
     
-    public Tile getTile(Coordinaat crd){
+    static public Tile getTile(Coordinaat crd){
         return null;
     }
     

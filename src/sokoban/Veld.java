@@ -21,6 +21,10 @@ public class Veld extends Tile{
         this.doos = doos;
     }
     
+    public void removeDoos(){
+        this.doos = null;
+    }
+    
     public Tile getNeighbour(String richting){
         return this; //dit moet anderes
     }

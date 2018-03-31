@@ -9,27 +9,24 @@ package sokoban;
  *
  * @author tgrja
  */
-public class Doos {
+public class Doos extends MoveAble{
     
-    private Veld isOpVeld;
+    public Veld isOpVeld;
     
-    public void schuiven(String richting){
-        switch(richting){
-            case "Links" : 
-                System.out.println("Doos naar links verschoven.");
-                break;
-            case "Rechts": 
-                System.out.println("Doos naar Rechts verschoven.");
-                break;
-            case "Boven" : 
-                System.out.println("Doos naar boven verschoven.");
-                break;
-            case "Onder" : 
-                System.out.println("Doos naar onder verschoven.");
-                break;
-            default : 
-                System.out.println("De doos bleek zwaarder dan verwacht en is niet verschoven.");
-                break;
-        }
+    public Doos(Coordinaat c){
+        this.coordinaat = c;
+        isOpVeld = (Veld)Doolhof.getTile(coordinaat);
     }
+    
+    @Override
+    public void beweeg(String richting){
+        isOpVeld.removeDoos();
+        
+        super.beweeg(richting);
+        
+        Veld naar = (Veld)Doolhof.getTile(coordinaat);
+        naar.setDoos(this);
+    }
+    
+      
 }

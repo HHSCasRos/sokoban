@@ -17,16 +17,31 @@ public class NewMain {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Coordinaat t_cord = new Coordinaat(1,1);
-        System.out.println(t_cord.toString());
+        Coordinaat cord_1 = new Coordinaat(1,1);
+        Coordinaat cord_2 = new Coordinaat(2,1);
         
-        Doos d = new Doos();
+        System.out.println(cord_1.toString());
+        System.out.println(cord_2.toString()); 
         
-        EindVeld t = new EindVeld();
-        t.setCoordinaat(t_cord);
-        t.setDoos(d);
+        Veld V_1 = new Veld();
+        V_1.setCoordinaat(cord_1);
+
         
-        t.msg();
+        EindVeld EV_1 = new EindVeld();
+        EV_1.setCoordinaat(cord_2);
+        
+        
+        Doos d = new Doos(cord_1);
+        V_1.setDoos(d);
+        
+        //false omdat het niet in het zelfde doolhof zit.
+        System.out.println(d.isOpVeld != null);
+        
+        EV_1.msg();
+        
+        d.beweeg("Rechts");
+
+        EV_1.msg();
     }
     
 }
