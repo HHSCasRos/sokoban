@@ -11,11 +11,8 @@ package sokoban;
  */
 public class Doos extends MoveAble{
     
-    public Veld isOpVeld;
-    
-    public Doos(Coordinaat c){
-        this.coordinaat = c;
-        isOpVeld = (Veld)Doolhof.getTile(coordinaat);
+    public Doos(Coordinaat c, Doolhof dh){
+        super(c,dh);
     }
     
     @Override
@@ -24,7 +21,7 @@ public class Doos extends MoveAble{
         
         super.beweeg(richting);
         
-        Veld naar = (Veld)Doolhof.getTile(coordinaat);
+        Veld naar = (Veld)dh.getTile(coordinaat);
         naar.setDoos(this);
     }
     

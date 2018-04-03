@@ -11,14 +11,14 @@ package sokoban;
  */
 public class MoveAble {
     
-    Coordinaat coordinaat;
+    protected Veld isOpVeld;
+    protected Doolhof dh;
+    protected Coordinaat coordinaat;
     
-    public MoveAble(){
-        
-    }
-    
-    public MoveAble(Coordinaat c){
+    public MoveAble(Coordinaat c, Doolhof dh){
         this.coordinaat = c;
+        this.dh = dh;
+        isOpVeld = (Veld)dh.getTile(c);
     }
     
     public void beweeg(String richting){
@@ -52,11 +52,11 @@ public class MoveAble {
     public Tile[] getSurroundings(){
         //Als veld niet navigeerbaar is houd huidige positie
         Tile[] tiles = new Tile[5];
-        tiles[0] = Doolhof.getTile(coordinaat);//huidige positie
-        tiles[1] = Doolhof.getTile(coordinaat);//boven
-        tiles[2] = Doolhof.getTile(new Coordinaat(2,1));//rechts
-        tiles[3] = Doolhof.getTile(coordinaat);//onder
-        tiles[4] = Doolhof.getTile(coordinaat);//links     
+        tiles[0] = dh.getTile(coordinaat);//huidige positie
+        tiles[1] = dh.getTile(new Coordinaat(coordinaat.getX(),coordinaat.getY()-1));//boven
+        tiles[2] = dh.getTile(new Coordinaat(coordinaat.getX()+1,coordinaat.getY()));//rechts
+        tiles[3] = dh.getTile(new Coordinaat(coordinaat.getX(),coordinaat.getY()+1));//onder
+        tiles[4] = dh.getTile(new Coordinaat(coordinaat.getX()-1,coordinaat.getY()));//links     
         
         return tiles;
     }

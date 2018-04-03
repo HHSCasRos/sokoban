@@ -11,13 +11,8 @@ package sokoban;
  */
 public class Speler extends MoveAble{
     
-    public Speler(){
-        //zet speler op eerst mogelijke veld van doolhof.
-        //this.coordinaat = ...
-    }
-    
-    public Speler(Coordinaat c){
-        this.coordinaat = c;
+    public Speler(Coordinaat c, Doolhof dh){
+        super(c,dh);
     }
     
     @Override

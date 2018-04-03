@@ -9,7 +9,7 @@ package sokoban;
  *
  * @author tgrja
  */
-public class Coordinaat {
+public class Coordinaat implements Comparable<Coordinaat>{
     private int x;
     private int y;
     
@@ -17,10 +17,37 @@ public class Coordinaat {
         this.x = horizontaal;
         this.y = verticaal;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
     
     @Override
     public String toString(){
         return(/*"(X,Y) */"(" + this.x + "," + this.y + ")");
+    }
+    
+    @Override
+    public int compareTo( final Coordinaat other) {
+        int same;
+        if(Integer.compare(this.x, other.x) == 0 && Integer.compare(this.y, other.y) == 0){
+            same = 0;
+        }else if(Integer.compare(this.y, other.y) == -1){
+            same = -1;
+        }else if(Integer.compare(this.y, other.y) == 1){
+            same = 1;
+        }else if(Integer.compare(this.x, other.x) == -1){
+            same = -1;
+        }else{
+            same = 1;
+        }
+        
+        return same;
+        //return Integer.compare(this.x, other.x);
     }
 }
 

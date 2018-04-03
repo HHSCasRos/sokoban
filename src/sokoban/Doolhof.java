@@ -5,14 +5,40 @@
  */
 package sokoban;
 
+import java.util.HashMap;
+
 /**
  *
  * @author tgrja
  */
 public class Doolhof {
     
-    static public Tile getTile(Coordinaat crd){
+    //lijst / map
+    private HashMap TileList = new HashMap();
+    
+    public Tile getTile(Coordinaat crd){
+
+        Object[] cords = TileList.keySet().toArray();
+        for(Object o : cords){
+            crd.compareTo((Coordinaat)o);
+            if(crd.compareTo((Coordinaat)o) == 0){
+                return (Tile)TileList.get(o);
+            }
+        }
         return null;
+    }
+    
+    public void fillField( Coordinaat[] c, Tile[] t){
+        if(c.length == t.length){
+            int count = 0;
+            for(Coordinaat crd : c){    
+                TileList.put(crd, t[count]);
+                count++;
+            }
+        }else{
+            //throw exception.
+            return;
+        } 
     }
     
     public boolean completed(Veld[] eindVelden){
