@@ -5,6 +5,9 @@
  */
 package sokoban;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 /**
  *
  * @authors tgrja, Cas Ros
@@ -102,6 +105,26 @@ public class Speler extends MoveAble{
             return true;
         } catch(ClassCastException c){
             return false;
+        }
+    }
+    
+    public class KeyListener{
+        public void keyPressed(KeyEvent e) {
+            int keyCode = e.getKeyCode();
+            switch(keyCode) { 
+            case KeyEvent.VK_UP:
+                beweeg("Boven");
+                break;
+            case KeyEvent.VK_DOWN:
+                beweeg("Onder");
+                break;
+            case KeyEvent.VK_LEFT:
+                beweeg("Links");
+                break;
+            case KeyEvent.VK_RIGHT :
+                beweeg("Rechts");
+                break;
+            }
         }
     }
 }
