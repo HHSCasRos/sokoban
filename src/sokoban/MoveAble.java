@@ -21,32 +21,44 @@ public class MoveAble {
         isOpVeld = (Veld)dh.getTile(c);
     }
     
-    public void beweeg(String richting){
+    public boolean beweeg(String richting){
         Tile[] t = getSurroundings();
         //deze switch case is afhenkelijk van de getsurroundings method.
         switch(richting){
             case "Boven" :
-                coordinaat = t[1].getCoordinaat();
-                System.out.println("Naar boven verplaats.");
+                if(t[1].isNavigateable()){
+                    coordinaat = t[1].getCoordinaat();
+                    System.out.println("Naar boven verplaats.");
+                    return true;
+                }
                 break;
             case "Rechts": 
-                coordinaat = t[2].getCoordinaat();
-                System.out.println("Naar Rechts verplaats.");
+                if(t[2].isNavigateable()){
+                    coordinaat = t[2].getCoordinaat();
+                    System.out.println("Naar Rechts verplaats.");
+                    return true;
+                }
                 break;
             case "Onder" : 
-                coordinaat = t[3].getCoordinaat();
-                System.out.println("Naar onder verplaats.");
+                if(t[3].isNavigateable()){
+                    coordinaat = t[3].getCoordinaat();
+                    System.out.println("Naar onder verplaats.");
+                    return true;
+                }
                 break;
             case "Links" : 
-                coordinaat = t[4].getCoordinaat();
-                System.out.println("Naar links verplaats.");
+                if(t[4].isNavigateable()){
+                    coordinaat = t[4].getCoordinaat();
+                    System.out.println("Naar links verplaats.");
+                    return true;
+                }
                 break;
             default : 
                 coordinaat = t[0].getCoordinaat();
                 System.out.println("Je twijvelt nog over je beweging.");
                 break;
         }
-        
+        return false;
     }
     
     public Tile[] getSurroundings(){

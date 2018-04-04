@@ -12,6 +12,14 @@ package sokoban;
 public class Tile {
     private Coordinaat coordinaat;
     private boolean navigateable;
+
+    public boolean isNavigateable() {
+        return navigateable;
+    }
+
+    public void setNavigateable(boolean navigateable) {
+        this.navigateable = navigateable;
+    }
     
     public Coordinaat getCoordinaat(){
         return this.coordinaat;

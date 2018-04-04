@@ -7,7 +7,7 @@ package sokoban;
 
 /**
  *
- * @author tgrja
+ * @authors tgrja, Cas Ros
  */
 public class Speler extends MoveAble{
     
@@ -16,23 +16,41 @@ public class Speler extends MoveAble{
     }
     
     @Override
-    public void beweeg(String richting){
-        if(/*neighbourVeld = Muur */false){
-            return;
-        }else if(/*neighbourVeld = Veld met doos */ false){
-            duwen(richting);
-        }else{
+    public boolean beweeg(String richting){
+        boolean move = super.beweeg(richting);
+        if(!move){
+            Tile[] surroundings = super.getSurroundings();
             switch(richting){
                 case "Links" : 
+                    if(!neigbourIsMuur(surroundings[4])){
+                        duwen(richting);
+                    } else {
+                        return false;
+                    }
                     System.out.println("Naar links gelopen.");
                     break;
                 case "Rechts": 
+                    if(!neigbourIsMuur(surroundings[2])){
+                        duwen(richting);
+                    } else {
+                        return false;
+                    }
                     System.out.println("Naar Rechts gelopen.");
                     break;
                 case "Boven" : 
+                    if(!neigbourIsMuur(surroundings[1])){
+                        duwen(richting);
+                    } else {
+                        return false;
+                    }
                     System.out.println("Naar boven gelopen.");
                     break;
                 case "Onder" : 
+                    if(!neigbourIsMuur(surroundings[3])){
+                        duwen(richting);
+                    } else {
+                        return false;
+                    }
                     System.out.println("Naar onder gelopen.");
                     break;
                 default : 
@@ -40,15 +58,25 @@ public class Speler extends MoveAble{
                     break;
             }
         }
+        return move;
     }
     
     public void duwen(String richting){
         if(/*neighbourVeld's neighbour = Muur */ false){
-            return;
+            
         }else if(/*neighbourVeld's neigbour = Veld met doos */ false){
-            return;
+            
         }else{
             //Doos.schuiven(richting);
+        }
+    }
+    
+    public boolean neigbourIsMuur(Tile neighbour){
+        try{
+            Muur muur = (Muur)neighbour;
+            return true;
+        } catch(ClassCastException c){
+            return false;
         }
     }
 }

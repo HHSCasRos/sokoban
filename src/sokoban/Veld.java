@@ -19,14 +19,12 @@ public class Veld extends Tile{
 
     public void setDoos(Doos doos) {
         this.doos = doos;
+        super.setNavigateable(false);
     }
     
     public void removeDoos(){
         this.doos = null;
-    }
-    
-    public Tile getNeighbour(String richting){
-        return this; //dit moet anderes
+        super.setNavigateable(true);
     }
     
     public boolean hasDoos(){
