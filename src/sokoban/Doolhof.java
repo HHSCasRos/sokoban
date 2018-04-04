@@ -12,9 +12,13 @@ import java.util.HashMap;
  * @author tgrja
  */
 public class Doolhof {
-    
+    Level level;
     //lijst / map
     private HashMap TileList = new HashMap();
+
+    public Doolhof(Level level) {
+        this.level = level;
+    }
     
     public Tile getTile(Coordinaat crd){
 
