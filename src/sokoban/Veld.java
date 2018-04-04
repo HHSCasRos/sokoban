@@ -12,6 +12,10 @@ package sokoban;
 public class Veld extends Tile{
     private Speler speler;
     private Doos doos;
+    
+    public Veld(Coordinaat c){
+        super(c);
+    }
 
     public Doos getDoos() {
         return doos;

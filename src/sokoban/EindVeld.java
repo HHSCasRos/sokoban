@@ -11,6 +11,9 @@ package sokoban;
  */
 public class EindVeld extends Veld{
     
+    public EindVeld(Coordinaat c){
+        super(c);
+    }
     
     public void changeDoos(){
         //de draw methode voor doos moet veranderd worden.

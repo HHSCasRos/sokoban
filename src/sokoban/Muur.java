@@ -10,5 +10,7 @@ package sokoban;
  * @author tgrja
  */
 public class Muur extends Tile{
-    
+    public Muur(Coordinaat c){
+        super(c);
+    }
 }

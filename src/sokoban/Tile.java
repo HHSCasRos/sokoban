@@ -13,6 +13,10 @@ public class Tile {
     private Coordinaat coordinaat;
     private boolean navigateable;
 
+    public Tile(Coordinaat c){
+        this.coordinaat = c;
+    }
+    
     public boolean isNavigateable() {
         return navigateable;
     }
