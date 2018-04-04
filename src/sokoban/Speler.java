@@ -62,12 +62,37 @@ public class Speler extends MoveAble{
     }
     
     public void duwen(String richting){
-        if(/*neighbourVeld's neighbour = Muur */ false){
+        Tile[] surroundings = super.getSurroundings();
+        Tile tile = null;
+        boolean valid = true;
+        switch(richting){
+            case "Links" : 
+                tile = surroundings[4];
+                System.out.println("try to push " + tile.getCoordinaat());
+                break;
+            case "Rechts": 
+                tile = surroundings[2];
+                break;
+            case "Boven" : 
+                tile = surroundings[1];
+                break;
+            case "Onder" : 
+                tile = surroundings[3];
+                break;
+            default : 
+                valid = false;
+                break;
+        }
+        
+        if(valid){
+            System.out.println("try to push " + tile.getCoordinaat());
             
-        }else if(/*neighbourVeld's neigbour = Veld met doos */ false){
-            
-        }else{
-            //Doos.schuiven(richting);
+            if(!neigbourIsMuur(tile)){
+                Veld veld = (Veld) tile;
+                if(veld.hasDoos()){
+                    veld.getDoos().beweeg(richting);
+                }
+            }
         }
     }
     
