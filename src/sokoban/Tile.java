@@ -32,4 +32,9 @@ public class Tile {
     public void setCoordinaat(Coordinaat c){
         this.coordinaat = c;
     }
+    
+    @Override
+    public String toString(){
+        return "NONE";
+    }
 }

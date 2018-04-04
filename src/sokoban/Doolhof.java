@@ -60,4 +60,12 @@ public class Doolhof {
             return false;
         }
     }
+    
+    @Override
+    public String toString(){
+        String field = "";
+        String row = "";
+        
+        return field;
+    }
 }

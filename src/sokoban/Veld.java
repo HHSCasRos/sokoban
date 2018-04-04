@@ -38,4 +38,9 @@ public class Veld extends Tile{
             return true;
         }
     }
+    
+    @Override
+    public String toString(){
+        return "V";
+    }
 }

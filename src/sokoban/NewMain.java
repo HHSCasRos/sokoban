@@ -18,6 +18,8 @@ public class NewMain {
         // TODO code application logic here
         Level lvl = new Level();
         Doolhof dh = createSpeelVeld(lvl);
+        Speler sp = new Speler(new Coordinaat(2,1),dh);
+        
         
 
     }

@@ -13,4 +13,9 @@ public class Muur extends Tile{
     public Muur(Coordinaat c){
         super(c);
     }
+    
+    @Override
+    public String toString(){
+        return "M";
+    }
 }

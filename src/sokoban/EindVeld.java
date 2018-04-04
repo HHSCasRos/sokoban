@@ -26,4 +26,9 @@ public class EindVeld extends Veld{
             System.out.println("Box not on endfield " + this.getCoordinaat().toString());
         }
     }
+    
+    @Override
+    public String toString(){
+        return "E";
+    }
 }
