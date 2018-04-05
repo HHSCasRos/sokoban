@@ -5,6 +5,7 @@
  */
 package sokoban;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -84,8 +85,8 @@ public class NewMain {
         return dh;
     }
     
-    static public void loadinterface(Doolhof dh){
-        JFrame frame = new GameFieldViewer(dh);
+    static public void loadinterface(ArrayList<Level> levels){
+        JFrame frame = new HomeScreen(levels);
         
         frame.setTitle("Home Menu");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
