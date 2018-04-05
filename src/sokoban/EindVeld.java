@@ -15,10 +15,6 @@ public class EindVeld extends Veld{
         super(c);
     }
     
-    public void changeDoos(){
-        //de draw methode voor doos moet veranderd worden.
-    }
-    
     public void msg(){
         if(hasDoos()){
             System.out.println("Box on endfield " + this.getCoordinaat().toString());
