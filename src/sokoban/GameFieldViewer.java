@@ -7,8 +7,11 @@
 package sokoban;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,7 +22,9 @@ import javax.swing.JPanel;
  */
 public class GameFieldViewer extends JFrame{
     private GameField component;
-    private JPanel pausePanel;
+    private JPanel scorePanel;
+    private JLabel displayedScore;
+    
     private JPanel messagePanel;
     
     private final int FRAME_WIDTH;
@@ -30,7 +35,7 @@ public class GameFieldViewer extends JFrame{
     private Doolhof doolhof;
     private Doolhof doolhofCopy;
     private Tile[][] tiles;
-    private JLabel label;
+    
     
     public GameFieldViewer(Doolhof doolhof, HomeScreen homeScreen) {
         this.setLayout(new BorderLayout());
@@ -49,12 +54,24 @@ public class GameFieldViewer extends JFrame{
         this.FRAME_HEIGHT = tileSize * gameFieldSize;
         this.setSize(FRAME_WIDTH + 16, FRAME_HEIGHT + 89);
 
+        createScorePanel();
         KeyListener listener = new PlayerControlsKeyListener(this, homeScreen);
         this.addKeyListener(listener);
         
+        add(scorePanel, BorderLayout.NORTH);
         add(component, BorderLayout.CENTER);
         
         component.setVisible(true);
+    }
+    
+    public void createScorePanel(){
+        scorePanel = new JPanel();
+        scorePanel.setLayout(new BoxLayout(scorePanel, BoxLayout.X_AXIS));
+        
+        displayedScore = new JLabel(doolhofCopy.getScore() + "");
+        
+        scorePanel.add(displayedScore);
+        add(scorePanel);
     }
     
     class PlayerControlsKeyListener implements KeyListener {   
