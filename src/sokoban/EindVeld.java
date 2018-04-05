@@ -35,7 +35,7 @@ public class EindVeld extends Veld{
         }else if(hasSpeler()){
             return "S"; 
         }else{
-            return "V";
+            return "E";
         }
     }
 }
