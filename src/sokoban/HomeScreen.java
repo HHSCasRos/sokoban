@@ -39,7 +39,7 @@ public class HomeScreen extends JFrame{
         this.label = new JLabel();
         
         for(int i = 0; i < this.levels.size(); i++){
-            button.add(new JButton());
+            button.add(new JButton(levels.get(i).getIdLevel()));
             String j = "" + i;
             button.get(i).setActionCommand(j);
             

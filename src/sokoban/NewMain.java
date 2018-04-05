@@ -19,8 +19,8 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Level lvl = new Level();
-        Doolhof dh = createSpeelVeld(lvl);
+        Level lvl = new Level("test level");
+        Doolhof dh = createSpeelVeld(lvl, "test doolhof");
         addMoveAbles(dh);
         
         Speler sp = new Speler(new Coordinaat(2,1),dh);
@@ -49,8 +49,8 @@ public class NewMain {
         Doos D_2 = new Doos(new Coordinaat(3,2),dh);
     }
     
-    public static Doolhof createSpeelVeld(Level lvl){
-        Doolhof dh = new Doolhof(lvl);
+    public static Doolhof createSpeelVeld(Level lvl, String naam){
+        Doolhof dh = new Doolhof(lvl, naam);
         Coordinaat[] crds = new Coordinaat[25];
         Tile[] tiles = new Tile[crds.length];
         

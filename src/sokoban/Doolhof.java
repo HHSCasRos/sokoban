@@ -15,9 +15,15 @@ public class Doolhof {
     private int size;
     private int eindVelden = 0;
     private Tile[][] tiles;
+    private String naam;
 
-    public Doolhof(Level level) {
+    Doolhof(Level level, String naam) {
         this.level = level;
+        this.naam = naam;
+    }
+
+    public String getNaam() {
+        return naam;
     }
 
     public Speler getSpeler() {

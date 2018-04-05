@@ -35,7 +35,7 @@ public class GameFieldViewer extends JFrame{
     public GameFieldViewer(Doolhof doolhof, HomeScreen homeScreen) {
         this.setLayout(new BorderLayout());
         this.doolhof = doolhof;
-        this.doolhofCopy = new Doolhof(doolhof.getLevel());
+        this.doolhofCopy = new Doolhof(doolhof.getLevel(), doolhof.getNaam());
         this.doolhofCopy.setField(doolhof.getField());
         
         this.tiles = this.doolhofCopy.getField();

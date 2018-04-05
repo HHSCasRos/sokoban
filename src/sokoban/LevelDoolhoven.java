@@ -46,7 +46,7 @@ public class LevelDoolhoven extends JFrame{
             String j = "" + i;
             button.get(i).setActionCommand(j);
             
-            listener.add(new DoolhofSelectListener(, homescreen));
+            listener.add(new DoolhofSelectListener(doolhoven.get(i).getNaam(), homescreen));
             button.get(i).addActionListener(listener.get(i));
         }
         

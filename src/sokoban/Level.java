@@ -14,7 +14,7 @@ public class Level {
     private Doolhof[] doolhoven;
     private String idLevel;
     
-    public void Level(String idLevel){
+    public Level(String idLevel){
         this.idLevel = idLevel;
     }
     
@@ -24,6 +24,10 @@ public class Level {
     
     public void loadNextDoolhof(){
         
+    }
+
+    public Doolhof[] getDoolhoven() {
+        return doolhoven;
     }
 
     public String getIdLevel() {
