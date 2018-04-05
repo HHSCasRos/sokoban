@@ -20,7 +20,10 @@ public class NewMain {
         Doolhof dh = createSpeelVeld(lvl);
         Speler sp = new Speler(new Coordinaat(2,1),dh);
         
+        System.out.println(dh.toString());
         
+        System.out.println(dh.getTile(new Coordinaat(1,3)).toString());
+        System.out.println(dh.getTile(new Coordinaat(1,3)).getCoordinaat().toString());
 
     }
     
@@ -59,7 +62,7 @@ public class NewMain {
         Coordinaat C_34 = new Coordinaat(3,4);      crds[23]= C_34;        Tile t_34 = new Muur(C_34);       tiles[23] = t_34;
         Coordinaat C_44 = new Coordinaat(4,4);      crds[24]= C_44;        Tile t_44 = new Muur(C_44);       tiles[24] = t_44;
         
-        dh.fillField(crds, tiles);
+        dh.fillField(tiles , 5);
         return dh;
     }
     
