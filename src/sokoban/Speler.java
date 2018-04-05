@@ -64,15 +64,6 @@ public class Speler extends MoveAble{
         dh.completed();
     }
     
-    public boolean neigbourIsMuur(Tile neighbour){
-        try{
-            Muur muur = (Muur)neighbour;
-            return true;
-        } catch(ClassCastException c){
-            return false;
-        }
-    }
-    
     public class KeyListener{
         public void keyPressed(KeyEvent e) {
             int keyCode = e.getKeyCode();
