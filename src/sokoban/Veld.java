@@ -15,6 +15,7 @@ public class Veld extends Tile{
     
     public Veld(Coordinaat c){
         super(c);
+        super.setNavigateable(true);
     }
 
     public Doos getDoos() {

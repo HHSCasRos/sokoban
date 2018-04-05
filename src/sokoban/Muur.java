@@ -12,6 +12,7 @@ package sokoban;
 public class Muur extends Tile{
     public Muur(Coordinaat c){
         super(c);
+        super.setNavigateable(false);
     }
     
     @Override

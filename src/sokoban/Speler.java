@@ -40,6 +40,7 @@ public class Speler extends MoveAble{
                         return false;
                     }
                     System.out.println("Naar Rechts gelopen.");
+                    //dh.printDoolhof();
                     break;
                 case "Boven" : 
                     if(!neigbourIsMuur(surroundings[1])){

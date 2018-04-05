@@ -35,6 +35,6 @@ public class Tile {
     
     @Override
     public String toString(){
-        return "NONE";
+        return "ERROR";
     }
 }

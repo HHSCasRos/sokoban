@@ -18,15 +18,18 @@ public class NewMain {
         // TODO code application logic here
         Level lvl = new Level();
         Doolhof dh = createSpeelVeld(lvl);
+        addMoveAbles(dh);
+        
         Speler sp = new Speler(new Coordinaat(2,1),dh);
+        System.out.println(dh.toString());
+        sp.beweeg("Rechts");
+    }
+    
+    public static void addMoveAbles(Doolhof dh){
+        
         
         Doos D_1 = new Doos(new Coordinaat(1,2),dh);
         Doos D_2 = new Doos(new Coordinaat(3,2),dh);
-        System.out.println(dh.toString());
-        
-//        System.out.println(dh.getTile(new Coordinaat(1,3)).toString());
-//        System.out.println(dh.getTile(new Coordinaat(1,3)).getCoordinaat().toString());
-
     }
     
     public static Doolhof createSpeelVeld(Level lvl){
