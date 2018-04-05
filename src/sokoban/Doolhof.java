@@ -55,7 +55,7 @@ public class Doolhof {
             }
         }else{
             //throw exception.
-            return;
+            
         } 
     }
     
@@ -86,6 +86,10 @@ public class Doolhof {
             System.out.println(completedDozen + " / " + eindVelden.length + " COMPLETED");
             return false;
         }
+    }
+    
+    public void printDoolhof(){
+        System.out.println(this.toString());
     }
     
     @Override

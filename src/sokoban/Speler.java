@@ -98,6 +98,7 @@ public class Speler extends MoveAble{
                 }
             }
         }
+        
     }
     
     public boolean neigbourIsMuur(Tile neighbour){
