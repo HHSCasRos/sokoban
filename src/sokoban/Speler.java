@@ -68,48 +68,84 @@ public class Speler extends MoveAble{
     
     @Override
     public void move(String richting){
-        isOpVeld.removeSpeler();
         super.move(richting);
+        
+        if(isOpVeld != (Veld)dh.getTile(coordinaat)){
+            isOpVeld.removeSpeler();
         isOpVeld = (Veld)dh.getTile(coordinaat);
         isOpVeld.setSpeler(this);
+        
         dh.printDoolhof();
+        }else{
+            duwen(richting);
+        }
     }
     
     public void duwen(String richting){
-        Tile[] surroundings = super.getSurroundings();
-        Tile tile = null;
-        boolean valid = true;
+        Tile[] t = getSurroundings();
+        int to = 0;
         switch(richting){
-            case "Links" : 
-                tile = surroundings[4];
-                System.out.println("try to push " + tile.getCoordinaat());
+            case "Boven" :
+                to = 1;
                 break;
-            case "Rechts": 
-                tile = surroundings[2];
+            case "Rechts" :
+                to = 2;
                 break;
-            case "Boven" : 
-                tile = surroundings[1];
+            case "Onder" :
+                to = 3;
                 break;
-            case "Onder" : 
-                tile = surroundings[3];
-                break;
-            default : 
-                valid = false;
+            case "Links" :
+                to = 4;
                 break;
         }
-        
-        if(valid){
-            System.out.println("try to push " + tile.getCoordinaat());
-            
-            if(!neigbourIsMuur(tile)){
-                Veld veld = (Veld) tile;
-                if(veld.hasDoos()){
-                    veld.getDoos().beweeg(richting);
-                }
+        if(t[to] instanceof Veld){
+            Veld tmp = (Veld)t[to];
+            if(tmp.hasDoos()){
+                System.out.println("Probeert doos te duwen!");
+                tmp.getDoos().move(richting);
+                this.move(richting); //optioneel wel implementeren als je achter doos aan wilt.
             }
+        }else{
+            System.out.println("Dat is een muur!");
         }
-        
     }
+    
+    
+//    public void duwen(String richting){
+//        Tile[] surroundings = super.getSurroundings();
+//        Tile tile = null;
+//        boolean valid = true;
+//        switch(richting){
+//            case "Links" : 
+//                tile = surroundings[4];
+//                System.out.println("try to push " + tile.getCoordinaat());
+//                break;
+//            case "Rechts": 
+//                tile = surroundings[2];
+//                break;
+//            case "Boven" : 
+//                tile = surroundings[1];
+//                break;
+//            case "Onder" : 
+//                tile = surroundings[3];
+//                break;
+//            default : 
+//                valid = false;
+//                break;
+//        }
+//        
+//        if(valid){
+//            System.out.println("try to push " + tile.getCoordinaat());
+//            
+//            if(!neigbourIsMuur(tile)){
+//                Veld veld = (Veld) tile;
+//                if(veld.hasDoos()){
+//                    veld.getDoos().beweeg(richting);
+//                }
+//            }
+//        }
+//        
+//    }
     
     public boolean neigbourIsMuur(Tile neighbour){
         try{
@@ -125,16 +161,16 @@ public class Speler extends MoveAble{
             int keyCode = e.getKeyCode();
             switch(keyCode) { 
             case KeyEvent.VK_UP:
-                beweeg("Boven");
+                //beweeg("Boven");
                 break;
             case KeyEvent.VK_DOWN:
-                beweeg("Onder");
+                //beweeg("Onder");
                 break;
             case KeyEvent.VK_LEFT:
-                beweeg("Links");
+                //beweeg("Links");
                 break;
             case KeyEvent.VK_RIGHT :
-                beweeg("Rechts");
+                //beweeg("Rechts");
                 break;
             }
         }

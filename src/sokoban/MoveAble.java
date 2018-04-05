@@ -21,45 +21,45 @@ public class MoveAble {
         isOpVeld = (Veld)dh.getTile(c);
     }
     
-    public boolean beweeg(String richting){
-        Tile[] t = getSurroundings();
-        //deze switch case is afhenkelijk van de getsurroundings method.
-        switch(richting){
-            case "Boven" :
-                if(t[1].isNavigateable()){
-                    coordinaat = t[1].getCoordinaat();
-                    System.out.println("Naar boven verplaats.");
-                    return true;
-                }
-                break;
-            case "Rechts": 
-                if(t[2].isNavigateable()){
-                    coordinaat = t[2].getCoordinaat();
-                    System.out.println("Naar Rechts verplaats.");
-                    return true;
-                }
-                break;
-            case "Onder" : 
-                if(t[3].isNavigateable()){
-                    coordinaat = t[3].getCoordinaat();
-                    System.out.println("Naar onder verplaats.");
-                    return true;
-                }
-                break;
-            case "Links" : 
-                if(t[4].isNavigateable()){
-                    coordinaat = t[4].getCoordinaat();
-                    System.out.println("Naar links verplaats.");
-                    return true;
-                }
-                break;
-            default : 
-                coordinaat = t[0].getCoordinaat();
-                System.out.println("Je twijvelt nog over je beweging.");
-                break;
-        }
-        return false;
-    }
+//    public boolean beweeg(String richting){
+//        Tile[] t = getSurroundings();
+//        //deze switch case is afhenkelijk van de getsurroundings method.
+//        switch(richting){
+//            case "Boven" :
+//                if(t[1].isNavigateable()){
+//                    coordinaat = t[1].getCoordinaat();
+//                    System.out.println("Naar boven verplaats.");
+//                    return true;
+//                }
+//                break;
+//            case "Rechts": 
+//                if(t[2].isNavigateable()){
+//                    coordinaat = t[2].getCoordinaat();
+//                    System.out.println("Naar Rechts verplaats.");
+//                    return true;
+//                }
+//                break;
+//            case "Onder" : 
+//                if(t[3].isNavigateable()){
+//                    coordinaat = t[3].getCoordinaat();
+//                    System.out.println("Naar onder verplaats.");
+//                    return true;
+//                }
+//                break;
+//            case "Links" : 
+//                if(t[4].isNavigateable()){
+//                    coordinaat = t[4].getCoordinaat();
+//                    System.out.println("Naar links verplaats.");
+//                    return true;
+//                }
+//                break;
+//            default : 
+//                coordinaat = t[0].getCoordinaat();
+//                System.out.println("Je twijvelt nog over je beweging.");
+//                break;
+//        }
+//        return false;
+//    }
     
     public void move(String richting){       
         Tile[] t = getSurroundings();
@@ -80,9 +80,9 @@ public class MoveAble {
         }
         if(t[to].isNavigateable()){
             coordinaat = t[to].getCoordinaat();
-            System.out.println("beweegt naar "+richting);
+            System.out.println("Beweegt naar "+richting);
         }else{
-            System.out.println("beweegt niet "+richting);
+            System.out.println("Er blokkert iets");
         }
         //dh.printDoolhof();
     }

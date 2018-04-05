@@ -21,7 +21,13 @@ public class NewMain {
         addMoveAbles(dh);
         
         Speler sp = new Speler(new Coordinaat(2,1),dh);
+        
         System.out.println(dh.toString());
+        sp.move("Rechts");
+        sp.move("Links");
+        sp.move("Boven");
+        sp.move("Links");
+        sp.move("Onder");
     }
     
     public static void addMoveAbles(Doolhof dh){
