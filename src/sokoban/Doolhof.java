@@ -27,6 +27,10 @@ public class Doolhof {
         return tiles;
     }
     
+    public void setField(Tile[][] tiles){
+        this.tiles = tiles;
+    }
+    
     public Tile getTile(Coordinaat crd){
 
         for(int Y=0; Y<size; Y++){
