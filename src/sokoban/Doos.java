@@ -15,17 +15,6 @@ public class Doos extends MoveAble{
         super(c,dh);
         isOpVeld.setDoos(this);
     }
-    
-//    @Override
-//    public boolean beweeg(String richting){
-//        isOpVeld.removeDoos();
-//        
-//        boolean moved = super.beweeg(richting);
-//        
-//        Veld naar = (Veld)dh.getTile(coordinaat);
-//        naar.setDoos(this);
-//        return moved;
-//    }
 
     @Override
     public void move(String richting) {
