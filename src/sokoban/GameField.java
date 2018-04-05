@@ -24,6 +24,7 @@ public class GameField extends JComponent{
         this.doolhof = doolhof;
         tiles = doolhof.getField();
         this.size = tiles.length;
+        this.tileSize = 250;
     }
     
     @Override
