@@ -5,17 +5,20 @@
  */
 package sokoban;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tgrja
  */
 public class Level {
     private int aantalStappen;
-    private Doolhof[] doolhoven;
+    private ArrayList<Doolhof> doolhoven;
     private String idLevel;
     
     public Level(String idLevel){
         this.idLevel = idLevel;
+        this.doolhoven = new ArrayList();
     }
     
     public void loadDoolhof(){
@@ -26,7 +29,11 @@ public class Level {
         
     }
 
-    public Doolhof[] getDoolhoven() {
+    public void addDoolhof(Doolhof dh){
+        doolhoven.add(dh);
+    }
+    
+    public ArrayList<Doolhof> getDoolhoven() {
         return doolhoven;
     }
 

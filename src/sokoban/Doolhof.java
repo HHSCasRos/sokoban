@@ -20,6 +20,7 @@ public class Doolhof {
     Doolhof(Level level, String naam) {
         this.level = level;
         this.naam = naam;
+        this.level.addDoolhof(this);
     }
 
     public String getNaam() {

@@ -32,7 +32,7 @@ public class LevelDoolhoven extends JFrame{
     
     public LevelDoolhoven(Level level, HomeScreen homescreen) {
         this.level = level;
-        doolhoven = new ArrayList();
+        this.doolhoven = level.getDoolhoven();
         
         setSize(FRAME_WIDTH, FRAME_HEIGHT);
         
@@ -42,7 +42,7 @@ public class LevelDoolhoven extends JFrame{
         this.label = new JLabel();
         
         for(int i = 0; i < this.doolhoven.size(); i++){
-            button.add(new JButton());
+            button.add(new JButton(doolhoven.get(i).getNaam()));
             String j = "" + i;
             button.get(i).setActionCommand(j);
             
