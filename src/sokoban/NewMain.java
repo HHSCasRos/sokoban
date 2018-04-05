@@ -5,6 +5,8 @@
  */
 package sokoban;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author tgrja
@@ -22,7 +24,7 @@ public class NewMain {
         
         Speler sp = new Speler(new Coordinaat(2,1),dh);
         
-        System.out.println(dh.toString());
+/*        System.out.println(dh.toString());
         sp.move("Rechts");
         sp.move("Links");
         sp.move("Boven");
@@ -31,7 +33,9 @@ public class NewMain {
         sp.move("Boven");
         sp.move("Rechts");
         sp.move("Rechts");
-        sp.move("Onder");
+        sp.move("Onder");*/
+        
+        loadinterface(dh);
     }
     
     public static void addMoveAbles(Doolhof dh){
@@ -80,4 +84,12 @@ public class NewMain {
         return dh;
     }
     
+    static public void loadinterface(Doolhof dh){
+        JFrame frame = new GameFieldViewer(dh);
+        
+        frame.setTitle("Home Menu");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        frame.setVisible(true);
+    }
 }

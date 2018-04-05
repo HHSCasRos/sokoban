@@ -16,20 +16,21 @@ import javax.swing.JComponent;
  */
 public class GameField extends JComponent{
     private int size;
-    private Tile[][] fields;
+    private Tile[][] tiles;
     private Doolhof doolhof;
+    private int tileSize;
 
     public GameField(Doolhof doolhof) {
         this.doolhof = doolhof;
-        fields = doolhof.getTiles();
-        this.size = fields.length;
+        tiles = doolhof.getField();
+        this.size = tiles.length;
     }
     
     @Override
     public void paintComponent(Graphics g) {
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                switch(fields[i][j].toString()){
+                switch(tiles[i][j].toString()){
                     case "V" :
                         g.setColor(Color.GRAY);
                         break;
@@ -49,8 +50,16 @@ public class GameField extends JComponent{
                         g.setColor(Color.WHITE);
                         break;
                 }
-                g.fillRect( fields[i][j].getCoordinaat().getX() , fields[i][j].getCoordinaat().getY() , 25, 25);
+                g.fillRect( tiles[i][j].getCoordinaat().getX() , tiles[i][j].getCoordinaat().getY() , tileSize, tileSize);
             }
         }
+    }
+
+    public int getTileSize() {
+        return tileSize;
+    }
+
+    public int getGameFieldSize() {
+        return this.size;
     }
 }

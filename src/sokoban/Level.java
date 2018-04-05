@@ -14,5 +14,10 @@ public class Level {
     private Doolhof[] doolhoven;
     
     public void loadDoolhof(){
+        
+    }
+    
+    public void loadNextDoolhof(){
+        
     }
 }
