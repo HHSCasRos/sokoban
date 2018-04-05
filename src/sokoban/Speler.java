@@ -78,16 +78,16 @@ public class Speler extends MoveAble{
             int keyCode = e.getKeyCode();
             switch(keyCode) { 
             case KeyEvent.VK_UP:
-                //beweeg("Boven");
+                move("Boven");
                 break;
             case KeyEvent.VK_DOWN:
-                //beweeg("Onder");
+                move("Onder");
                 break;
             case KeyEvent.VK_LEFT:
-                //beweeg("Links");
+                move("Links");
                 break;
             case KeyEvent.VK_RIGHT :
-                //beweeg("Rechts");
+                move("Rechts");
                 break;
             }
         }
