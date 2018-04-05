@@ -68,10 +68,14 @@ public class GameFieldViewer extends JFrame{
         scorePanel = new JPanel();
         scorePanel.setLayout(new BoxLayout(scorePanel, BoxLayout.X_AXIS));
         
-        displayedScore = new JLabel(doolhofCopy.getScore() + "");
+        displayedScore = new JLabel("0");
         
         scorePanel.add(displayedScore);
         add(scorePanel);
+    }
+    
+    private void updateScorePanel(int score){
+        displayedScore.setText(""+score);
     }
     
     class PlayerControlsKeyListener implements KeyListener {   
@@ -105,6 +109,7 @@ public class GameFieldViewer extends JFrame{
                 doolhof.getSpeler().move("Rechts");
                 break;
             }
+            updateScorePanel(doolhof.getScore());
             component.repaint();
         }
 

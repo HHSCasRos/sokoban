@@ -66,8 +66,8 @@ public class Doolhof {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void upScore() {
+        this.score++;
     }
     
     public void fillField(Tile[] t, int size){
