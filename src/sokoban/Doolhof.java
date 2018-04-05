@@ -17,6 +17,8 @@ public class Doolhof {
     private Tile[][] tiles;
     private String naam;
 
+    private int score = 0;
+    
     Doolhof(Level level, String naam) {
         this.level = level;
         this.naam = naam;
@@ -58,6 +60,14 @@ public class Doolhof {
         }
         
         return null;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
     
     public void fillField(Tile[] t, int size){

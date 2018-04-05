@@ -23,7 +23,7 @@ public class Speler extends MoveAble{
     @Override
     public void move(String richting){
         super.move(richting);
-        
+        super.dh.setScore(super.dh.getScore() + 1);
         if(isOpVeld != (Veld)dh.getTile(coordinaat)){
             isOpVeld.removeSpeler();
         isOpVeld = (Veld)dh.getTile(coordinaat);
