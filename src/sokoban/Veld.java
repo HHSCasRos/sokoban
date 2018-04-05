@@ -38,9 +38,31 @@ public class Veld extends Tile{
             return true;
         }
     }
+
+    public void setSpeler(Speler speler) {
+        this.speler = speler;
+    }
+    
+    public void removeSpeler(){
+        this.speler = null;
+    }
+    
+    public boolean hasSpeler(){
+        if(speler == null){
+            return false;
+        }else{
+            return true;
+        }
+    }
     
     @Override
     public String toString(){
-        return "V";
+        if(hasDoos()){
+            return "D";
+        }else if(hasSpeler()){
+            return "S"; 
+        }else{
+            return "V";
+        }
     }
 }

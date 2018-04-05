@@ -13,6 +13,7 @@ public class Doos extends MoveAble{
     
     public Doos(Coordinaat c, Doolhof dh){
         super(c,dh);
+        isOpVeld.setDoos(this);
     }
     
     @Override
