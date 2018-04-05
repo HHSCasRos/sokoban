@@ -52,7 +52,7 @@ public class NewMain {
         
         Coordinaat C_00 = new Coordinaat(0,0);      crds[0]= C_00;        Tile t_00 = new Muur(C_00);        tiles[0] = t_00;
         Coordinaat C_10 = new Coordinaat(1,0);      crds[1]= C_10;        Tile t_10 = new Muur(C_10);        tiles[1] = t_10;
-        Coordinaat C_20 = new Coordinaat(2,0);      crds[2]= C_20;        Tile t_20 = new Muur(C_20);        tiles[2] = t_20;
+        Coordinaat C_20 = new Coordinaat(2,0);      crds[2]= C_20;        Tile t_20 = new Veld(C_20);        tiles[2] = t_20;
         Coordinaat C_30 = new Coordinaat(3,0);      crds[3]= C_30;        Tile t_30 = new Muur(C_30);        tiles[3] = t_30;
         Coordinaat C_40 = new Coordinaat(4,0);      crds[4]= C_40;        Tile t_40 = new Muur(C_40);        tiles[4] = t_40;
         

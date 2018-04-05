@@ -12,6 +12,11 @@ package sokoban;
 public class Level {
     private int aantalStappen;
     private Doolhof[] doolhoven;
+    private String idLevel;
+    
+    public void Level(String idLevel){
+        this.idLevel = idLevel;
+    }
     
     public void loadDoolhof(){
         
@@ -19,5 +24,9 @@ public class Level {
     
     public void loadNextDoolhof(){
         
+    }
+
+    public String getIdLevel() {
+        return idLevel;
     }
 }

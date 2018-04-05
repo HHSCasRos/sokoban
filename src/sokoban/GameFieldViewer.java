@@ -32,7 +32,7 @@ public class GameFieldViewer extends JFrame{
     private Tile[][] tiles;
     private JLabel label;
     
-    public GameFieldViewer(Doolhof doolhof/*, HomeScreen homeScreen*/) {
+    public GameFieldViewer(Doolhof doolhof, HomeScreen homeScreen) {
         this.setLayout(new BorderLayout());
         this.doolhof = doolhof;
         this.doolhofCopy = new Doolhof(doolhof.getLevel());
@@ -49,7 +49,7 @@ public class GameFieldViewer extends JFrame{
         this.FRAME_HEIGHT = tileSize * gameFieldSize;
         this.setSize(FRAME_WIDTH + 16, FRAME_HEIGHT + 89);
 
-        KeyListener listener = new PlayerControlsKeyListener(this/*, homeScreen*/);
+        KeyListener listener = new PlayerControlsKeyListener(this, homeScreen);
         this.addKeyListener(listener);
         
         add(component, BorderLayout.CENTER);
@@ -61,9 +61,9 @@ public class GameFieldViewer extends JFrame{
         private JFrame frame;
         private HomeScreen homeScreen;
 
-        public PlayerControlsKeyListener(JFrame frame/*, HomeScreen homeScreen*/) {
+        public PlayerControlsKeyListener(JFrame frame, HomeScreen homeScreen) {
             this.frame = frame;
-            //this.homeScreen = homeScreen;
+            this.homeScreen = homeScreen;
         }
         
         @Override
@@ -88,6 +88,7 @@ public class GameFieldViewer extends JFrame{
                 doolhof.getSpeler().move("Rechts");
                 break;
             }
+            component.repaint();
         }
 
         @Override

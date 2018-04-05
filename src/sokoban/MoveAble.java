@@ -38,13 +38,14 @@ public class MoveAble {
                 to = 4;
                 break;
         }
-        if(t[to].isNavigateable()){
-            coordinaat = t[to].getCoordinaat();
-            System.out.println("Beweegt naar "+richting);
-        }else{
-            System.out.println("Er blokkert iets");
+        if(t[to] != null){
+            if(t[to].isNavigateable()){
+                coordinaat = t[to].getCoordinaat();
+                System.out.println("Beweegt naar "+richting);
+            }else{
+                System.out.println("Er blokkert iets");
+            }
         }
-
     }
     
     public Tile[] getSurroundings(){

@@ -24,7 +24,7 @@ public class GameField extends JComponent{
         this.doolhof = doolhof;
         tiles = doolhof.getField();
         this.size = tiles.length;
-        this.tileSize = 250;
+        this.tileSize = 25;
     }
     
     @Override
@@ -51,7 +51,7 @@ public class GameField extends JComponent{
                         g.setColor(Color.WHITE);
                         break;
                 }
-                g.fillRect( tiles[i][j].getCoordinaat().getX() , tiles[i][j].getCoordinaat().getY() , tileSize, tileSize);
+                g.fillRect( tiles[i][j].getCoordinaat().getX() * tileSize, tiles[i][j].getCoordinaat().getY() * tileSize, tileSize, tileSize);
             }
         }
     }

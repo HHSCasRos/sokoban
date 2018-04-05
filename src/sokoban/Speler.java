@@ -57,7 +57,7 @@ public class Speler extends MoveAble{
             if(tmp.hasDoos()){
                 System.out.println("Probeert doos te duwen!");
                 tmp.getDoos().move(richting);
-                this.move(richting); //optioneel wel implementeren als je achter doos aan wilt.
+                //this.move(richting); //optioneel wel implementeren als je achter doos aan wilt.
             }
         }else{
             System.out.println("Dat is een muur!");
