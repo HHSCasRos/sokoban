@@ -18,6 +18,10 @@ public class Doolhof {
     public Doolhof(Level level) {
         this.level = level;
     }
+
+    public Level getLevel() {
+        return level;
+    }
     
     public Tile getTile(Coordinaat crd){
 
