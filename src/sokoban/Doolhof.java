@@ -11,12 +11,21 @@ package sokoban;
 public class Doolhof {
     private Level level;
     
+    private Speler sp;
     private int size;
     private int eindVelden = 0;
     private Tile[][] tiles;
 
     public Doolhof(Level level) {
         this.level = level;
+    }
+
+    public Speler getSpeler() {
+        return sp;
+    }
+
+    public void setSpeler(Speler sp) {
+        this.sp = sp;
     }
 
     public Level getLevel() {

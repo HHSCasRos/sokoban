@@ -17,6 +17,7 @@ public class Speler extends MoveAble{
     public Speler(Coordinaat c, Doolhof dh){
         super(c,dh);
         isOpVeld.setSpeler(this);
+        dh.setSpeler(this);
     }
     
     @Override
