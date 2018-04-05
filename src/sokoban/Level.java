@@ -11,8 +11,8 @@ package sokoban;
  */
 public class Level {
     private int aantalStappen;
+    private Doolhof[] doolhoven;
     
     public void loadDoolhof(){
-        
     }
 }
