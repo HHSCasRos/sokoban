@@ -35,8 +35,11 @@ public class NewMain {
         sp.move("Rechts");
         sp.move("Rechts");
         sp.move("Onder");*/
+
+        ArrayList<Level> levels = new ArrayList();
+        levels.add(lvl);
         
-        loadinterface(dh);
+        loadinterface(levels);
     }
     
     public static void addMoveAbles(Doolhof dh){
