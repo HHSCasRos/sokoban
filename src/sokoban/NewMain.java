@@ -28,6 +28,10 @@ public class NewMain {
         sp.move("Boven");
         sp.move("Links");
         sp.move("Onder");
+        sp.move("Boven");
+        sp.move("Rechts");
+        sp.move("Rechts");
+        sp.move("Onder");
     }
     
     public static void addMoveAbles(Doolhof dh){

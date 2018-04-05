@@ -34,6 +34,7 @@ public class Doos extends MoveAble{
         isOpVeld = (Veld)dh.getTile(coordinaat);
         isOpVeld.setDoos(this);
         dh.printDoolhof();
+        
     }
     
     

@@ -29,8 +29,8 @@ public class EindVeld extends Veld{
     
     @Override
     public String toString(){
+        msg();
         if(hasDoos()){
-            msg();
             return "F";
         }else if(hasSpeler()){
             return "S"; 

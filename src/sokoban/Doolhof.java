@@ -17,6 +17,7 @@ public class Doolhof {
     private HashMap TileList = new HashMap();
     
     private int size;
+    private int eindVelden = 0;
     private Tile[][] tiles;
 
     public Doolhof(Level level) {
@@ -67,24 +68,29 @@ public class Doolhof {
         for(int Y=0; Y<size; Y++){
             for(int X=0; X<size; X++){
                 tiles[X][Y] = t[count];
+                
+                if(tiles[X][Y] instanceof EindVeld){
+                    eindVelden++;
+                }
                 count++;
             }
         }
     }
     
-    public boolean completed(Veld[] eindVelden){
-        int completedDozen = 0;
-        
-        for(Veld v: eindVelden){
-            if(v.hasDoos())
-                completedDozen += 1;
+    public void completed(){
+        int count = 0;
+        for(int Y=0; Y<size; Y++){
+            for(int X=0; X<size; X++){
+                if(tiles[X][Y] instanceof EindVeld){
+                    EindVeld tmp = (EindVeld)tiles[X][Y];
+                    if(tmp.hasDoos())
+                        count++;
+                }
+            }
         }
-        if(completedDozen == eindVelden.length){
-            System.out.println("ALL COMPLETED");
-            return true;
-        }else{
-            System.out.println(completedDozen + " / " + eindVelden.length + " COMPLETED");
-            return false;
+        
+        if(eindVelden == count){
+            System.out.println("DOOLHOF COMPLEET !!!");
         }
     }
     
