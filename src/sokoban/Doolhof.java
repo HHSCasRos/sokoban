@@ -23,6 +23,10 @@ public class Doolhof {
         return level;
     }
     
+    public Tile[][] getField(){
+        return tiles;
+    }
+    
     public Tile getTile(Coordinaat crd){
 
         for(int Y=0; Y<size; Y++){
