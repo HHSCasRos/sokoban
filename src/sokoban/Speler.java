@@ -19,51 +19,60 @@ public class Speler extends MoveAble{
         isOpVeld.setSpeler(this);
     }
     
+//    @Override
+//    public boolean beweeg(String richting){
+//        boolean move = super.beweeg(richting);
+//        if(!move){
+//            Tile[] surroundings = super.getSurroundings();
+//            switch(richting){
+//                case "Links" : 
+//                    if(!neigbourIsMuur(surroundings[4])){
+//                        duwen(richting);
+//                    } else {
+//                        return false;
+//                    }
+//                    System.out.println("Naar links gelopen.");
+//                    break;
+//                case "Rechts": 
+//                    if(!neigbourIsMuur(surroundings[2])){
+//                        duwen(richting);
+//                    } else {
+//                        return false;
+//                    }
+//                    System.out.println("Naar Rechts gelopen.");
+//                    //dh.printDoolhof();
+//                    break;
+//                case "Boven" : 
+//                    if(!neigbourIsMuur(surroundings[1])){
+//                        duwen(richting);
+//                    } else {
+//                        return false;
+//                    }
+//                    System.out.println("Naar boven gelopen.");
+//                    break;
+//                case "Onder" : 
+//                    if(!neigbourIsMuur(surroundings[3])){
+//                        duwen(richting);
+//                    } else {
+//                        return false;
+//                    }
+//                    System.out.println("Naar onder gelopen.");
+//                    break;
+//                default : 
+//                    System.out.println("Je twijvelt nog over je beweging.");
+//                    break;
+//            }
+//        }
+//        return move;
+//    }
+    
     @Override
-    public boolean beweeg(String richting){
-        boolean move = super.beweeg(richting);
-        if(!move){
-            Tile[] surroundings = super.getSurroundings();
-            switch(richting){
-                case "Links" : 
-                    if(!neigbourIsMuur(surroundings[4])){
-                        duwen(richting);
-                    } else {
-                        return false;
-                    }
-                    System.out.println("Naar links gelopen.");
-                    break;
-                case "Rechts": 
-                    if(!neigbourIsMuur(surroundings[2])){
-                        duwen(richting);
-                    } else {
-                        return false;
-                    }
-                    System.out.println("Naar Rechts gelopen.");
-                    //dh.printDoolhof();
-                    break;
-                case "Boven" : 
-                    if(!neigbourIsMuur(surroundings[1])){
-                        duwen(richting);
-                    } else {
-                        return false;
-                    }
-                    System.out.println("Naar boven gelopen.");
-                    break;
-                case "Onder" : 
-                    if(!neigbourIsMuur(surroundings[3])){
-                        duwen(richting);
-                    } else {
-                        return false;
-                    }
-                    System.out.println("Naar onder gelopen.");
-                    break;
-                default : 
-                    System.out.println("Je twijvelt nog over je beweging.");
-                    break;
-            }
-        }
-        return move;
+    public void move(String richting){
+        isOpVeld.removeSpeler();
+        super.move(richting);
+        isOpVeld = (Veld)dh.getTile(coordinaat);
+        isOpVeld.setSpeler(this);
+        dh.printDoolhof();
     }
     
     public void duwen(String richting){

@@ -22,7 +22,6 @@ public class NewMain {
         
         Speler sp = new Speler(new Coordinaat(2,1),dh);
         System.out.println(dh.toString());
-        sp.beweeg("Rechts");
     }
     
     public static void addMoveAbles(Doolhof dh){

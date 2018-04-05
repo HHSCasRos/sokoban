@@ -16,14 +16,25 @@ public class Doos extends MoveAble{
         isOpVeld.setDoos(this);
     }
     
+//    @Override
+//    public boolean beweeg(String richting){
+//        isOpVeld.removeDoos();
+//        
+//        boolean moved = super.beweeg(richting);
+//        
+//        Veld naar = (Veld)dh.getTile(coordinaat);
+//        naar.setDoos(this);
+//        return moved;
+//    }
+
     @Override
-    public boolean beweeg(String richting){
+    public void move(String richting) {
         isOpVeld.removeDoos();
-        
-        boolean moved = super.beweeg(richting);
-        
-        Veld naar = (Veld)dh.getTile(coordinaat);
-        naar.setDoos(this);
-        return moved;
+        super.move(richting);
+        isOpVeld = (Veld)dh.getTile(coordinaat);
+        isOpVeld.setDoos(this);
+        dh.printDoolhof();
     }
+    
+    
 }

@@ -61,6 +61,32 @@ public class MoveAble {
         return false;
     }
     
+    public void move(String richting){       
+        Tile[] t = getSurroundings();
+        int to = 0;
+        switch(richting){
+            case "Boven" :
+                to = 1;
+                break;
+            case "Rechts" :
+                to = 2;
+                break;
+            case "Onder" :
+                to = 3;
+                break;
+            case "Links" :
+                to = 4;
+                break;
+        }
+        if(t[to].isNavigateable()){
+            coordinaat = t[to].getCoordinaat();
+            System.out.println("beweegt naar "+richting);
+        }else{
+            System.out.println("beweegt niet "+richting);
+        }
+        //dh.printDoolhof();
+    }
+    
     public Tile[] getSurroundings(){
         //Als veld niet navigeerbaar is houd huidige positie
         Tile[] tiles = new Tile[5];

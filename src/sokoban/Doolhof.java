@@ -89,6 +89,7 @@ public class Doolhof {
     }
     
     public void printDoolhof(){
+        System.out.println();
         System.out.println(this.toString());
     }
     
