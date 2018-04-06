@@ -21,6 +21,7 @@ public class NewMain {
         // TODO code application logic here
         Level lvl = new Level("test level");
         Doolhof dh = new Doolhof(lvl,"Test Hof","TxtHofs/Test.txt");
+        Doolhof dh1 = new Doolhof(lvl,"Wiki Hof","TxtHofs/WikipediaLevel.txt");
 
         ArrayList<Level> levels = new ArrayList();
         levels.add(lvl);
