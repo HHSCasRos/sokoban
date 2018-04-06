@@ -6,9 +6,12 @@
 
 package sokoban;
 
+import java.awt.Font;
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,7 +39,7 @@ public class HomeScreen extends JFrame{
         //create all buttons
         this.button = new ArrayList();
         this.listener = new ArrayList();
-        this.label = new JLabel();
+        this.label = new JLabel("SOKOBAN");
         
         for(int i = 0; i < this.levels.size(); i++){
             button.add(new JButton(levels.get(i).getIdLevel()));
@@ -47,7 +50,7 @@ public class HomeScreen extends JFrame{
             button.get(i).addActionListener(listener.get(i));
         }
         
-        createPanel();
+        createPanels();
     }
     
     class LevelSelectListener implements ActionListener{
@@ -73,14 +76,22 @@ public class HomeScreen extends JFrame{
     }
     
     //adds all buttons to panel
-    private void createPanel() {
-        JPanel panel = new JPanel();
+    private void createPanels() {
+        JPanel containerPanel = new JPanel();
+        JPanel titlePanel = new JPanel();
+        JPanel levelPanel = new JPanel();
         
+        containerPanel.setLayout(new BoxLayout(containerPanel, BoxLayout.Y_AXIS));
+        
+        label.setFont(new Font("Serif", Font.PLAIN, 64));
+        
+        titlePanel.add(label);
         for(int i = 0; i < button.size(); i++){
-            panel.add(button.get(i));
+            levelPanel.add(button.get(i));
         }
-        panel.add(label);
         
-        add(panel);
+        containerPanel.add(titlePanel);
+        containerPanel.add(levelPanel);
+        add(containerPanel);
     }
 }
