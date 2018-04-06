@@ -205,7 +205,7 @@ public class Doolhof {
         }
     }
     
-    public void completed(){
+    public boolean completed(){
         int count = 0;
         for(int Y=0; Y<size; Y++){
             for(int X=0; X<size; X++){
@@ -219,6 +219,9 @@ public class Doolhof {
         
         if(eindVelden == count){
             System.out.println("DOOLHOF COMPLEET !!!");
+            return true;
+        }else{
+            return false;
         }
     }
 }

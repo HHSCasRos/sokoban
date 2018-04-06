@@ -50,7 +50,7 @@ public class GameFieldViewer extends JFrame{
 
         
         createScorePanel();
-        createRestartPanel();
+        createMenuPanel();
         
         KeyListener listener = new PlayerControlsKeyListener(this, homeScreen);
         this.addKeyListener(listener);
@@ -60,6 +60,7 @@ public class GameFieldViewer extends JFrame{
         add(component, BorderLayout.CENTER);
         
         component.setVisible(true);
+        
     }
     
     public void copyField(){
@@ -79,13 +80,16 @@ public class GameFieldViewer extends JFrame{
         scorePanel.add(displayedScore);
         add(scorePanel);
     }
-    public void createRestartPanel(){
+    
+    public void createMenuPanel(){
         restartPanel = new JPanel();
-        restartPanel.setLayout(new BoxLayout(restartPanel, BoxLayout.X_AXIS));
+        restartPanel.setLayout(new BoxLayout(restartPanel, BoxLayout.Y_AXIS));
         
         JLabel restartInstructions = new JLabel("restart: R");
+        JLabel backInstructions = new JLabel("Back: B");
         
         restartPanel.add(restartInstructions);
+        restartPanel.add(backInstructions);
         add(restartPanel);
     }
     
@@ -104,10 +108,10 @@ public class GameFieldViewer extends JFrame{
 
     
     class PlayerControlsKeyListener implements KeyListener {   
-        private JFrame frame;
+        private GameFieldViewer frame;
         private HomeScreen homeScreen;
 
-        public PlayerControlsKeyListener(JFrame frame, HomeScreen homeScreen) {
+        public PlayerControlsKeyListener(GameFieldViewer frame, HomeScreen homeScreen) {
             this.frame = frame;
             this.homeScreen = homeScreen;
         }
@@ -135,7 +139,21 @@ public class GameFieldViewer extends JFrame{
             case KeyEvent.VK_R :
                 restart(dh, homeScreen);
                 break;
+            case KeyEvent.VK_B :
+                JFrame home = homeScreen;
+                home.setVisible(true);
+                home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.dispose();
+                break;
             }
+            
+            if(dh.completed()){
+                JFrame victory = new VictoryScreen(homeScreen);
+                victory.setVisible(true);
+                victory.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.dispose();
+            }
+            
             updateScorePanel(dh.getScore());
             component.repaint();
         }
