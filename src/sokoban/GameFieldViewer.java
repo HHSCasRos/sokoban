@@ -28,16 +28,11 @@ public class GameFieldViewer extends JFrame{
     private int tileSize;
     private int gameFieldSize;
     private Doolhof dh;
-    private Tile[][] tiles;
-    final private Tile[][] ORIGINAL;
-    
     
     public GameFieldViewer(Doolhof doolhof, HomeScreen homeScreen) {
         this.setLayout(new BorderLayout());
         this.dh = doolhof;
-        ORIGINAL = this.dh.getField();
         
-        this.tiles = this.dh.getField();
         this.component = new GameField(this.dh);
         
         //define and set framesize based on the required size of GameField
@@ -106,8 +101,6 @@ public class GameFieldViewer extends JFrame{
         this.dispose();
     }
 
-    
-    
     class PlayerControlsKeyListener implements KeyListener {   
         private GameFieldViewer frame;
         private HomeScreen homeScreen;
