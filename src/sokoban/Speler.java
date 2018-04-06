@@ -17,6 +17,8 @@ public class Speler extends MoveAble{
         dh.setSpeler(this);
     }
     
+    //overide de move function van Tile,
+    //omdat een speler probeert te duwen als hij niet gewoon op een veld kan stappen..
     @Override
     public void move(String richting){
         super.move(richting);
@@ -31,6 +33,7 @@ public class Speler extends MoveAble{
         }
     }
     
+    //kijkt of er een doos is om te duwen en duwt die dan in de loop richting.
     public void duwen(String richting){
         Tile[] t = getSurroundings();
         int to = 0;

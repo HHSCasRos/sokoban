@@ -26,11 +26,8 @@ public class Coordinaat implements Comparable<Coordinaat>{
         return y;
     }
     
-    @Override
-    public String toString(){
-        return(/*"(X,Y) */"(" + this.x + "," + this.y + ")");
-    }
-    
+    //een functie om te kijken of de inhoud van twee verschillende object coordinaten het zelfde zijn,
+    //zodat we coordinaten op inhoud kunnen vergelijken.
     @Override
     public int compareTo( final Coordinaat other) {
         int same;
@@ -47,7 +44,6 @@ public class Coordinaat implements Comparable<Coordinaat>{
         }
         
         return same;
-        //return Integer.compare(this.x, other.x);
     }
 }
 

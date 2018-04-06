@@ -27,6 +27,14 @@ public class GameField extends JComponent{
         this.tileSize = 25;
     }
     
+    //tekent voor elke tile in het speelveld een Rectangle met de desbetreffende kleukr code.
+    // Veld = Grijs 
+    // Muur = Donker Grijs
+    // Doos = Oranje
+    // EindVeld zonder Doos = Groen
+    // Speler = Blauw
+    // EindVeld met Doos = Wit
+    // Als er geen specefiek veldsoort is megegeven + Zwart
     @Override
     public void paintComponent(Graphics g) {
         for(int i = 0; i < size; i++){

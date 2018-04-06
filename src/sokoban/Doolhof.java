@@ -57,6 +57,7 @@ public class Doolhof {
         return tiles;
     }
     
+    //geeft de tile terug dat zig op het megegeven coordinaat bevindt.
     public Tile getTile(Coordinaat crd){
 
         for(int Y=0; Y<size; Y++){
@@ -73,9 +74,11 @@ public class Doolhof {
     public void resetScore() {
         this.score = 0;
     }
+    
     public int getScore() {
         return score;
     }
+    
     public void upScore() {
         this.score++;
     }
@@ -84,6 +87,7 @@ public class Doolhof {
         return RESOURCE;
     }
     
+    //zet alle regels van het text bestand in een List van Strings.
     private List<String> readSrc(){
         //daclarations
         InputStream stream;
@@ -113,6 +117,8 @@ public class Doolhof {
         }
         return lines;
     }
+    
+    //Maakt van het gegeven txt bestand een Doolhof veld en alle moveables op de gegeven locaties
     final public void fieldFromSrc(){
         List<String> lines = readSrc();
         size = Integer.parseInt(lines.get(0));
@@ -158,6 +164,8 @@ public class Doolhof {
         createMoveAbles(lines.subList(size+2, lines.size()));
     }
     
+    //zorgt er voor dat alle moveables gemaakt worden
+    //en op de juiste posities worden gezet.
     public void createMoveAbles(List<String> lines){
         int regelNr = 0;
         int aantalSpelers = Integer.parseInt(lines.get(regelNr));
@@ -179,6 +187,8 @@ public class Doolhof {
             regelNr++;
         }
     }
+    
+    //Zorgt er voor dat het textuele doelhof veld wordt omgezet in daadwerkelijke objectvelden.
     public void fillField(Tile[] t, int size){
         this.size = size;
         tiles = new Tile[size][size];
@@ -196,6 +206,8 @@ public class Doolhof {
         }
     }
     
+    //controleerdt of alle eindvelden een doos hebben,
+    //en dus het level compleet is.
     public boolean completed(){
         int count = 0;
         for(int Y=0; Y<size; Y++){

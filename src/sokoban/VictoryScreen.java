@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
+//Dit is eigenlijk een speelveld maar alleen bedoelt voor leuk en interactief voltooi scherm.
 public class VictoryScreen extends JFrame{
     
     private final int FRAME_WIDTH = 1280;
@@ -34,6 +34,8 @@ public class VictoryScreen extends JFrame{
         this.component.setVisible(true);
     }
     
+    //kijkt of er bepaalde key's worden ingedrukt
+    //en welke vervolgacties ondernomen moeten worden.
     class PlayerControlsKeyListener implements KeyListener {   
         private JFrame frame;
         private HomeScreen homeScreen;
@@ -70,6 +72,8 @@ public class VictoryScreen extends JFrame{
                 frame.dispose();
                 break;
             }
+            //zorgt er voor dat elke beweging zichtbaar wordt vertoont,
+            //door het veld met de nieuwe posities te hertekenen.
             component.repaint();
         }
         @Override

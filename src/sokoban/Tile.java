@@ -17,18 +17,22 @@ public class Tile {
         this.coordinaat = c;
     }
     
+    //kijkt of een tile navigateable is
     public boolean isNavigateable() {
         return navigateable;
     }
 
+    //bepaald of een tile navigatable is
     public void setNavigateable(boolean navigateable) {
         this.navigateable = navigateable;
     }
     
+    //voert het cordinaat van veld terug
     public Coordinaat getCoordinaat(){
         return this.coordinaat;
     }
     
+    //geeft een cordinaat aan veld.
     public void setCoordinaat(Coordinaat c){
         this.coordinaat = c;
     }

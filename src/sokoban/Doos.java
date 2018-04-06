@@ -16,15 +16,13 @@ public class Doos extends MoveAble{
         isOpVeld.setDoos(this);
     }
 
+    //zorgt er voor dat de doos van het oude veld wordt afgehaald
+    //en vervolgens op een nieuw veld wordt gezet.
     @Override
     public void move(String richting) {
         isOpVeld.removeDoos();
         super.move(richting);
         isOpVeld = (Veld)dh.getTile(coordinaat);
-        isOpVeld.setDoos(this);
-        //dh.printDoolhof();
-        
+        isOpVeld.setDoos(this);        
     }
-    
-    
 }

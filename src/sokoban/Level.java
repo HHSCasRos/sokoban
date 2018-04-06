@@ -20,14 +20,17 @@ public class Level {
         this.doolhoven = new ArrayList();
     }
 
+    //voegt een doolhof toe aan de lijst met doolhoven van dit level.
     public void addDoolhof(Doolhof dh){
         doolhoven.add(dh);
     }
     
+    //haalt alle doolhoven in dit level op
     public ArrayList<Doolhof> getDoolhoven() {
         return doolhoven;
     }
-
+    
+    //voert het levelid door.
     public String getIdLevel() {
         return idLevel;
     }

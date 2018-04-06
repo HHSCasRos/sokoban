@@ -21,6 +21,7 @@ public class MoveAble {
         isOpVeld = (Veld)dh.getTile(c);
     }
     
+    //veranderd de coordinaten van het object in de looprichting als het des betreffende veld navigatable is.
     public void move(String richting){       
         Tile[] t = getSurroundings();
         int to = 0;
@@ -48,6 +49,8 @@ public class MoveAble {
         }
     }
     
+    //haalt de velden om zig heen op,
+    //zodat het object niet op het hele ddolhof hoeft te kijken of hij 1 stap kan zetten
     public Tile[] getSurroundings(){
         Tile[] tiles = new Tile[5];
         tiles[0] = dh.getTile(coordinaat);//huidige positie

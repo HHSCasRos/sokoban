@@ -16,6 +16,10 @@ public class Muur extends Tile{
     }
     
     @Override
+    public void setNavigateable(boolean navigateable) {
+    }
+    
+    @Override
     public String toString(){
         return "M";
     }
