@@ -22,7 +22,7 @@ public class Doos extends MoveAble{
         super.move(richting);
         isOpVeld = (Veld)dh.getTile(coordinaat);
         isOpVeld.setDoos(this);
-        dh.printDoolhof();
+        //dh.printDoolhof();
         
     }
     

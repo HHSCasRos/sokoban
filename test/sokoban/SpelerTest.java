@@ -92,7 +92,7 @@ public class SpelerTest {
     @Test
     public void Player_SHOULD_Not_Move_WHEN_Destination_Tile_Is_Muur() {
         Level testLevel = new Level("testLevel");
-        Doolhof dh = new Doolhof(testLevel, "testDoolhof");
+        Doolhof dh = new Doolhof(testLevel, "testDoolhof",);
         Coordinaat[] crds = new Coordinaat[9];
         Tile[] tiles = new Tile[crds.length];
         

@@ -27,26 +27,25 @@ public class GameFieldViewer extends JFrame{
     
     private int tileSize;
     private int gameFieldSize;
-    private Doolhof doolhof;
-    private Doolhof doolhofCopy;
+    private Doolhof dh;
     private Tile[][] tiles;
+    final private Tile[][] ORIGINAL;
     
     
     public GameFieldViewer(Doolhof doolhof, HomeScreen homeScreen) {
         this.setLayout(new BorderLayout());
-        this.doolhof = doolhof;
-        this.doolhofCopy = new Doolhof(doolhof.getLevel(), doolhof.getNaam());
-        this.doolhofCopy.setField(doolhof.getField());
+        this.dh = doolhof;
+        ORIGINAL = this.dh.getField();
         
-        this.tiles = this.doolhofCopy.getField();
-        this.component = new GameField(this.doolhofCopy);
+        this.tiles = this.dh.getField();
+        this.component = new GameField(this.dh);
         
         //define and set framesize based on the required size of GameField
         this.tileSize = component.getTileSize();
         this.gameFieldSize = component.getGameFieldSize();
         
-        this.FRAME_WIDTH = tileSize * gameFieldSize;
-        this.FRAME_HEIGHT = tileSize * gameFieldSize;
+        this.FRAME_WIDTH = tileSize * gameFieldSize + 2 * tileSize;
+        this.FRAME_HEIGHT = tileSize * gameFieldSize + 2 * tileSize;
         this.setSize(FRAME_WIDTH + 16, FRAME_HEIGHT + 89);
 
         
@@ -61,6 +60,14 @@ public class GameFieldViewer extends JFrame{
         add(component, BorderLayout.CENTER);
         
         component.setVisible(true);
+    }
+    
+    public void copyField(){
+        
+        for(int Y=0; Y<gameFieldSize; Y++){
+            for(int X=0; X<gameFieldSize; X++){
+            }
+        }
     }
     
     public void createScorePanel(){
@@ -86,6 +93,16 @@ public class GameFieldViewer extends JFrame{
         displayedScore.setText(""+score);
     }
     
+    public void restart(Doolhof currentDoolhof, HomeScreen homeScreen){
+        currentDoolhof.fieldFromSrc();
+        currentDoolhof.resetScore();
+        JFrame restartFrame = new GameFieldViewer(currentDoolhof,homeScreen);
+        restartFrame.setVisible(true);
+        restartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+    }
+
+    
     class PlayerControlsKeyListener implements KeyListener {   
         private JFrame frame;
         private HomeScreen homeScreen;
@@ -104,22 +121,22 @@ public class GameFieldViewer extends JFrame{
             int keyCode = e.getKeyCode();
             switch(keyCode) { 
             case KeyEvent.VK_UP:
-                doolhofCopy.getSpeler().move("Boven");
+                dh.getSpeler().move("Boven");
                 break;
             case KeyEvent.VK_DOWN:
-                doolhofCopy.getSpeler().move("Onder");
+                dh.getSpeler().move("Onder");
                 break;
             case KeyEvent.VK_LEFT:
-                doolhofCopy.getSpeler().move("Links");
+                dh.getSpeler().move("Links");
                 break;
             case KeyEvent.VK_RIGHT :
-                doolhofCopy.getSpeler().move("Rechts");
+                dh.getSpeler().move("Rechts");
                 break;
             case KeyEvent.VK_R :
-                restart(doolhofCopy, homeScreen);
+                restart(dh, homeScreen);
                 break;
             }
-            updateScorePanel(doolhofCopy.getScore());
+            updateScorePanel(dh.getScore());
             component.repaint();
         }
         @Override
@@ -128,9 +145,4 @@ public class GameFieldViewer extends JFrame{
         }
     }
     
-    public void restart(Doolhof currentDoolhof, HomeScreen homeScreen){
-        JFrame restartFrame = new GameFieldViewer(currentDoolhof,homeScreen);
-        restartFrame.setVisible(true);
-        restartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
 }

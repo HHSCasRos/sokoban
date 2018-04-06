@@ -72,7 +72,7 @@ public class LevelDoolhoven extends JFrame{
             level = new GameFieldViewer(doolhoven.get(buttonClicked), frame);
             level.setVisible(true);
             level.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setVisible(false);
+            this.frame.setVisible(false);
         }
     }
     

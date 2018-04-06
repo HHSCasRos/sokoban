@@ -5,9 +5,6 @@
  */
 package sokoban;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 /**
  *
  * @authors tgrja, Cas Ros
@@ -29,7 +26,6 @@ public class Speler extends MoveAble{
         isOpVeld = (Veld)dh.getTile(coordinaat);
         isOpVeld.setSpeler(this);
         
-        dh.printDoolhof();
         }else{
             duwen(richting);
         }
@@ -57,31 +53,10 @@ public class Speler extends MoveAble{
             if(tmp.hasDoos()){
                 System.out.println("Probeert doos te duwen!");
                 tmp.getDoos().move(richting);
-                //this.move(richting); //optioneel wel implementeren als je achter doos aan wilt.
             }
         }else{
             System.out.println("Dat is een muur!");
         }
         dh.completed();
-    }
-    
-    public class KeyListener{
-        public void keyPressed(KeyEvent e) {
-            int keyCode = e.getKeyCode();
-            switch(keyCode) { 
-            case KeyEvent.VK_UP:
-                move("Boven");
-                break;
-            case KeyEvent.VK_DOWN:
-                move("Onder");
-                break;
-            case KeyEvent.VK_LEFT:
-                move("Links");
-                break;
-            case KeyEvent.VK_RIGHT :
-                move("Rechts");
-                break;
-            }
-        }
     }
 }

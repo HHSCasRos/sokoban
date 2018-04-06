@@ -15,17 +15,8 @@ public class EindVeld extends Veld{
         super(c);
     }
     
-    public void msg(){
-        if(hasDoos()){
-            System.out.println("Box on endfield " + this.getCoordinaat().toString());
-        }else{
-            System.out.println("Box not on endfield " + this.getCoordinaat().toString());
-        }
-    }
-    
     @Override
     public String toString(){
-        msg();
         if(hasDoos()){
             return "F";
         }else if(hasSpeler()){
