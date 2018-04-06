@@ -36,7 +36,7 @@ public class GameField extends JComponent{
                         g.setColor(Color.GRAY);
                         break;
                     case "M" :
-                        g.setColor(Color.RED);
+                        g.setColor(Color.DARK_GRAY);
                         break;
                     case "D" :
                         g.setColor(Color.ORANGE);
@@ -47,8 +47,11 @@ public class GameField extends JComponent{
                     case "S" :
                         g.setColor(Color.BLUE);
                         break;
-                    default :
+                    case "F" :
                         g.setColor(Color.WHITE);
+                        break;
+                    default :
+                        g.setColor(Color.BLACK);
                         break;
                 }
                 g.fillRect( tiles[i][j].getCoordinaat().getX() * tileSize, tiles[i][j].getCoordinaat().getY() * tileSize, tileSize, tileSize);
