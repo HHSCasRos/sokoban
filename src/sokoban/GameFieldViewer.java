@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package sokoban;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.BoxLayout;
@@ -22,10 +18,9 @@ import javax.swing.JPanel;
  */
 public class GameFieldViewer extends JFrame{
     private GameField component;
+    private JPanel restartPanel;
     private JPanel scorePanel;
     private JLabel displayedScore;
-    
-    private JPanel messagePanel;
     
     private final int FRAME_WIDTH;
     private final int FRAME_HEIGHT;
@@ -54,11 +49,15 @@ public class GameFieldViewer extends JFrame{
         this.FRAME_HEIGHT = tileSize * gameFieldSize;
         this.setSize(FRAME_WIDTH + 16, FRAME_HEIGHT + 89);
 
+        
         createScorePanel();
+        createRestartPanel();
+        
         KeyListener listener = new PlayerControlsKeyListener(this, homeScreen);
         this.addKeyListener(listener);
         
         add(scorePanel, BorderLayout.NORTH);
+        add(restartPanel, BorderLayout.SOUTH);
         add(component, BorderLayout.CENTER);
         
         component.setVisible(true);
@@ -72,6 +71,15 @@ public class GameFieldViewer extends JFrame{
         
         scorePanel.add(displayedScore);
         add(scorePanel);
+    }
+    public void createRestartPanel(){
+        restartPanel = new JPanel();
+        restartPanel.setLayout(new BoxLayout(restartPanel, BoxLayout.X_AXIS));
+        
+        JLabel restartInstructions = new JLabel("restart: R");
+        
+        restartPanel.add(restartInstructions);
+        add(restartPanel);
     }
     
     private void updateScorePanel(int score){
@@ -91,31 +99,38 @@ public class GameFieldViewer extends JFrame{
         public void keyTyped(KeyEvent e) {
             
         }
-
         @Override
         public void keyPressed(KeyEvent e) {
             int keyCode = e.getKeyCode();
             switch(keyCode) { 
             case KeyEvent.VK_UP:
-                doolhof.getSpeler().move("Boven");
+                doolhofCopy.getSpeler().move("Boven");
                 break;
             case KeyEvent.VK_DOWN:
-                doolhof.getSpeler().move("Onder");
+                doolhofCopy.getSpeler().move("Onder");
                 break;
             case KeyEvent.VK_LEFT:
-                doolhof.getSpeler().move("Links");
+                doolhofCopy.getSpeler().move("Links");
                 break;
             case KeyEvent.VK_RIGHT :
-                doolhof.getSpeler().move("Rechts");
+                doolhofCopy.getSpeler().move("Rechts");
+                break;
+            case KeyEvent.VK_R :
+                restart(doolhofCopy, homeScreen);
                 break;
             }
-            updateScorePanel(doolhof.getScore());
+            updateScorePanel(doolhofCopy.getScore());
             component.repaint();
         }
-
         @Override
         public void keyReleased(KeyEvent e) {
             
         }
+    }
+    
+    public void restart(Doolhof currentDoolhof, HomeScreen homeScreen){
+        JFrame restartFrame = new GameFieldViewer(currentDoolhof,homeScreen);
+        restartFrame.setVisible(true);
+        restartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
