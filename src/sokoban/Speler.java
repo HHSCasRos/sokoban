@@ -57,6 +57,5 @@ public class Speler extends MoveAble{
         }else{
             System.out.println("Dat is een muur!");
         }
-        dh.completed();
     }
 }

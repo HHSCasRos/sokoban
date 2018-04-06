@@ -54,7 +54,7 @@ public class GameField extends JComponent{
                         g.setColor(Color.BLACK);
                         break;
                 }
-                g.fillRect( tiles[i][j].getCoordinaat().getX() * tileSize, tiles[i][j].getCoordinaat().getY() * tileSize, tileSize, tileSize);
+                g.fillRect( tiles[i][j].getCoordinaat().getX() * tileSize + tileSize, tiles[i][j].getCoordinaat().getY() * tileSize + tileSize, tileSize, tileSize);
             }
         }
     }
