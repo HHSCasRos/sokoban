@@ -40,7 +40,7 @@ public class SpelerTest {
     }
 
     @Test
-    public void Player_Should_Move_When_Destination_Tile_Is_Veld_Without_Doos() {
+    public void Player_SHOULD_Move_WHEN_Destination_Tile_Is_Veld_Without_Doos() {
         Level testLevel = new Level("testLevel");
         Doolhof dh = new Doolhof(testLevel, "testDoolhof");
         Coordinaat[] crds = new Coordinaat[9];
@@ -90,7 +90,7 @@ public class SpelerTest {
     }
 
     @Test
-    public void Player_Should_Not_Move_When_Destination_Tile_Is_Muur() {
+    public void Player_SHOULD_Not_Move_WHEN_Destination_Tile_Is_Muur() {
         Level testLevel = new Level("testLevel");
         Doolhof dh = new Doolhof(testLevel, "testDoolhof");
         Coordinaat[] crds = new Coordinaat[9];
@@ -135,7 +135,7 @@ public class SpelerTest {
     }
 
     @Test
-    public void Player_Should_Push_Doos_When_Destination_Tile_Contains_Doos_And_Tile_Behind_Doos_Is_Navigatable() {
+    public void Player_SHOULD_Push_Doos_WHEN_Destination_Tile_Contains_Doos_AND_Tile_Behind_Doos_Is_Navigatable() {
         Level testLevel = new Level("testLevel");
         Doolhof dh = new Doolhof(testLevel, "testDoolhof");
         Coordinaat[] crds = new Coordinaat[9];
@@ -181,7 +181,7 @@ public class SpelerTest {
     }
 
     @Test
-    public void Doos_And_Player_Should_Not_Move_When_Doos_Pushed_Onto_Tile_Thats_Not_In_Field() {
+    public void Doos_And_Player_SHOULD_Not_Move_WHEN_Doos_Pushed_Onto_Tile_Thats_Not_In_Field() {
         Level testLevel = new Level("testLevel");
         Doolhof dh = new Doolhof(testLevel, "testDoolhof");
         Coordinaat[] crds = new Coordinaat[4];
@@ -212,7 +212,7 @@ public class SpelerTest {
     }
 
     @Test
-    public void Doos_And_Player_Should_Not_Move_When_Doos_Pushed_Onto_Tile_Thats_Muur() {
+    public void Doos_And_Player_SHOULD_Not_Move_WHEN_Doos_Pushed_Onto_Tile_Thats_Muur() {
         Level testLevel = new Level("testLevel");
         Doolhof dh = new Doolhof(testLevel, "testDoolhof");
         Coordinaat[] crds = new Coordinaat[9];
@@ -249,7 +249,7 @@ public class SpelerTest {
     }
     
     @Test
-    public void Doos_And_Player_Should_Not_Move_When_Doos_Pushed_Onto_Tile_That_Contains_Doos(){
+    public void Doos_And_Player_SHOULD_Not_Move_WHEN_Doos_Pushed_Onto_Tile_That_Contains_Doos(){
         Level testLevel = new Level("testLevel");
         Doolhof dh = new Doolhof(testLevel, "testDoolhof");
         Coordinaat[] crds = new Coordinaat[16];
