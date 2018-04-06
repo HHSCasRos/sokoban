@@ -12,21 +12,12 @@ import java.util.ArrayList;
  * @author tgrja
  */
 public class Level {
-    private int aantalStappen;
     private ArrayList<Doolhof> doolhoven;
     private String idLevel;
     
     public Level(String idLevel){
         this.idLevel = idLevel;
         this.doolhoven = new ArrayList();
-    }
-    
-    public void loadDoolhof(){
-        
-    }
-    
-    public void loadNextDoolhof(){
-        
     }
 
     public void addDoolhof(Doolhof dh){

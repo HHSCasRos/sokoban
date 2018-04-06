@@ -103,6 +103,7 @@ public class GameFieldViewer extends JFrame{
     }
 
     
+    
     class PlayerControlsKeyListener implements KeyListener {   
         private JFrame frame;
         private HomeScreen homeScreen;
@@ -144,5 +145,4 @@ public class GameFieldViewer extends JFrame{
             
         }
     }
-    
 }

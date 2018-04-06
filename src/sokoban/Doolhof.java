@@ -45,7 +45,6 @@ public class Doolhof {
     public Speler getSpeler() {
         return sp;
     }
-
     public void setSpeler(Speler sp) {
         this.sp = sp;
     }
@@ -57,8 +56,6 @@ public class Doolhof {
     public Tile[][] getField(){
         return tiles;
     }
-    
-    
     
     public Tile getTile(Coordinaat crd){
 
@@ -76,11 +73,9 @@ public class Doolhof {
     public void resetScore() {
         this.score = 0;
     }
-    
     public int getScore() {
         return score;
     }
-
     public void upScore() {
         this.score++;
     }
@@ -88,8 +83,6 @@ public class Doolhof {
     public String getResource() {
         return RESOURCE;
     }
-    
-    
     
     private List<String> readSrc(){
         //daclarations
@@ -120,7 +113,6 @@ public class Doolhof {
         }
         return lines;
     }
-    
     final public void fieldFromSrc(){
         List<String> lines = readSrc();
         size = Integer.parseInt(lines.get(0));
@@ -187,7 +179,6 @@ public class Doolhof {
             regelNr++;
         }
     }
-    
     public void fillField(Tile[] t, int size){
         this.size = size;
         tiles = new Tile[size][size];
