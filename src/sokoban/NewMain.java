@@ -22,7 +22,8 @@ public class NewMain {
         Level lvl = new Level("test level");
         Doolhof dh = new Doolhof(lvl,"Test Hof","TxtHofs/Test.txt");
         Doolhof dh1 = new Doolhof(lvl,"Wiki Hof","TxtHofs/WikipediaLevel.txt");
-
+        new Doolhof(lvl, "WellSHIT", "TxtHofs/WellShit.txt");
+        
         ArrayList<Level> levels = new ArrayList();
         levels.add(lvl);
         
